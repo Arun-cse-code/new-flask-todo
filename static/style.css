@@ -1,0 +1,217 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #cbe8ff, #eef7ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Prevents content from touching edges */
+    box-sizing: border-box;
+}
+
+/* Task Reminder Container */
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%; /* Responsive width */
+    max-width: 500px;
+}
+
+/* Title Styling */
+.title {
+    text-align: center;
+    font-size: 24px; /* Uniform size for desktop and mobile */
+    font-weight: bold;
+    color: #008080;
+    margin-bottom: 15px;
+}
+
+/* Task Card Styling */
+.todo-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.todo-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Checkbox for Task Completion */
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Task Details */
+.todo-details {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.todo-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.todo-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Time Stamp */
+.todo-time {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Edit Button (Pencil Icon) */
+.edit-btn {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007bff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.navbar {
+    background: #e6e6fa;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn {
+    border: none;
+    background-color: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+/* Title Styling */
+.title-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.dark-theme {
+    background: linear-gradient(to bottom right, #222, #333);
+    color: red;
+}
+
+.dark-theme .navbar {
+    background: #111;
+}
+
+.dark-theme .title-text {
+    color: white;
+}
+
+.dark-theme .theme-toggle-btn {
+    background: #444;
+    color: white;
+}
+
+.dark-theme .theme-toggle-btn:hover {
+    background: #555;
+}
+
+.dark-theme .todo-card {
+    background: #444;
+    color: white;
+}
+
+.dark-theme .todo-title {
+    color: white;
+}
+
+.dark-theme .todo-desc {
+    color: #ccc;
+}
+
+
+
+
+
+/* Floating Add Button */
+.floating-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: white;
+    color: black;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 0px 15px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 45px #00ffcc;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-btn:hover {
+    background-color: #00e6b8;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 20px #00e6b8, 0px 0px 20px #00e6b8, 0px 0px 10px #00e6b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .todo-container {
+        width: 95%;
+    }
+
+    .todo-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-checkbox {
+        width: 18px;
+        height: 18px;
+    }
+
+    .todo-title {
+        font-size: 15px;
+    }
+
+    .todo-desc {
+        font-size: 13px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+}

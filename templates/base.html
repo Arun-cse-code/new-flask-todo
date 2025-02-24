@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>MyTodo</title>
+</head>
+<body class="light-theme">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold title-text" href="/">MyTodo</a>
+            <button class="btn theme-toggle-btn" id="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5 pt-5">
+        {% block body %}{% endblock body %}
+    </div>
+
+    <!-- Bootstrap and Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
+    
+        // Check local storage for theme preference
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-theme");
+            themeToggle.textContent = "☀️";
+        }
+    
+        themeToggle.addEventListener("click", function () {
+            body.classList.toggle("dark-theme");
+    
+            if (body.classList.contains("dark-theme")) {
+                localStorage.setItem("theme", "dark");
+                themeToggle.textContent = "☀️";
+            } else {
+                localStorage.setItem("theme", "light");
+                themeToggle.textContent = "🌙";
+            }
+        });
+    });
+    </script>
+
+</body>
+</html>
